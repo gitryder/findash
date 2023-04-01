@@ -5,7 +5,7 @@ import type { Color } from "../../styles/colors";
 
 const commonTextStyles = (color: Color): React.CSSProperties => ({
   fontFamily: "Nunito",
-  fontWeight: "extrabold",
+  fontWeight: 800,
   ...(typeof color === "string"
     ? {
         color: colors?.[color]?.dark ?? color,
@@ -14,8 +14,8 @@ const commonTextStyles = (color: Color): React.CSSProperties => ({
 });
 
 interface TextProps {
-  size: 1.25 | 1.75 | 2 | 2.5 | 3 | 4;
-  color: Color | string;
+  size: 1 | 1.25 | 1.5 | 1.75 | 2 | 2.5 | 3 | 4;
+  color?: Color | string;
   children: React.ReactNode;
   style?: React.CSSProperties;
 }
