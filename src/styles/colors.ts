@@ -19,6 +19,10 @@ const COLORS = {
     dark: "#D9D9D9",
     light: "#E3E3E3",
   },
+  black: {
+    dark: "#404040",
+    light: "#333333",
+  },
 };
 
 type Color = keyof typeof COLORS;
