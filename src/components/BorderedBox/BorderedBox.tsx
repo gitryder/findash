@@ -6,9 +6,9 @@ const BorderedBox = ({
   children,
   style,
 }: {
-  gap: React.CSSProperties["gap"];
+  gap?: React.CSSProperties["gap"];
   children: React.ReactNode;
-  style: React.CSSProperties;
+  style?: React.CSSProperties;
 }) => {
   return (
     <div

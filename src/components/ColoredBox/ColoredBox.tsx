@@ -11,10 +11,10 @@ const ColoredBox = ({
   style,
 }: {
   color: Color;
-  direction: React.CSSProperties["flexDirection"];
-  gap: React.CSSProperties["gap"];
+  direction?: React.CSSProperties["flexDirection"];
+  gap?: React.CSSProperties["gap"];
   children: React.ReactNode;
-  style: React.CSSProperties;
+  style?: React.CSSProperties;
 }) => {
   return (
     <div
