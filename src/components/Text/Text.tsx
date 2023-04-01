@@ -8,15 +8,16 @@ const commonTextStyles = (color: Color): React.CSSProperties => ({
   fontWeight: "extrabold",
   ...(typeof color === "string"
     ? {
-        color: colors?.[color]?.dark,
+        color: colors?.[color]?.dark ?? color,
       }
     : {}),
 });
 
 interface TextProps {
   size: 1.25 | 1.75 | 2 | 2.5 | 3 | 4;
-  color: Color;
+  color: Color | string;
   children: React.ReactNode;
+  style?: React.CSSProperties;
 }
 
 const H5 = ({ color, children }: Pick<TextProps, "color" | "children">) => {
@@ -24,7 +25,7 @@ const H5 = ({ color, children }: Pick<TextProps, "color" | "children">) => {
     <h5
       style={{
         fontSize: "2rem",
-        ...commonTextStyles(color),
+        ...commonTextStyles(color as Color),
       }}
     >
       {children}
@@ -39,7 +40,7 @@ const Label = ({ color, children }: Pick<TextProps, "color" | "children">) => {
         fontSize: "1.25rem",
         textTransform: "capitalize",
         letterSpacing: "10%",
-        ...commonTextStyles(color),
+        ...commonTextStyles(color as Color),
       }}
     >
       {children}
@@ -47,12 +48,13 @@ const Label = ({ color, children }: Pick<TextProps, "color" | "children">) => {
   );
 };
 
-const Text = ({ size, color, children }: TextProps) => {
+const Text = ({ size, color, children, style }: TextProps) => {
   return (
     <p
       style={{
         fontSize: `${size}rem`,
-        ...commonTextStyles(color),
+        ...commonTextStyles(color as Color),
+        ...style,
       }}
     >
       {children}
