@@ -14,6 +14,7 @@ const BorderedBox = ({
     <div
       style={{
         display: "flex",
+        flexDirection: "column",
         gap: `${gap}rem`,
         padding: "1rem",
         border: `3px solid ${colors.grey.dark}`,
