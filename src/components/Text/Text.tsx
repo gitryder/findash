@@ -14,7 +14,7 @@ const commonTextStyles = (color: Color): React.CSSProperties => ({
 });
 
 interface TextProps {
-  size: 1.25 | 1.75 | 2 | 3 | 4;
+  size: 1.25 | 1.75 | 2 | 2.5 | 3 | 4;
   color: Color;
   children: React.ReactNode;
 }
