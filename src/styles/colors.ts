@@ -6,10 +6,12 @@ const COLORS = {
   red: {
     dark: "#C32828",
     light: "#EFDCDC",
+    lighter: "#EEAAAA",
   },
   green: {
     dark: "#348E3D",
     light: "#E3F3E4",
+    lighter: "#B4E4B9",
   },
   teal: {
     dark: "#36A09A",
