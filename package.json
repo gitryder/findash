@@ -1,5 +1,6 @@
 {
   "name": "findash",
+  "description": "A barebones financial dashboard powered by ChatGPT",
   "version": "0.1.0",
   "private": true,
   "scripts": {
