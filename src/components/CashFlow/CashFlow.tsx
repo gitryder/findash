@@ -7,6 +7,8 @@ import { useIncome } from "@queries/useIncome";
 import { AddExpenseModal } from "@components/AddExpenseModal";
 import { AddIncomeModal } from "@components/AddIncomeModal";
 
+import { getFormattedAmount } from "@helpers/amount";
+
 type EntryType = "expense" | "income";
 
 interface BaseProps {
@@ -162,7 +164,7 @@ const ExpenseEntry = ({
         }}
       >
         <Text size={2.5} color={color}>
-          {typeSymbol} ₹{amount}
+          {typeSymbol} {getFormattedAmount(amount)}
         </Text>
         {showTag && (
           <div
