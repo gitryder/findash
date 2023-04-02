@@ -20,6 +20,7 @@ const AddIncomeModal = (props: { isOpen: boolean; onClose: () => void }) => {
       {
         onSuccess: () => {
           props.onClose?.();
+          setExpense(initialExpense);
         },
       }
     );
