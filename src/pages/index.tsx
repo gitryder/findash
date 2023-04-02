@@ -1,7 +1,7 @@
 import React from "react";
-import { Navbar, AtAGlance, NetSavings } from "@components";
+import { Navbar, AtAGlance, NetSavings, CashFlow } from "@components";
 
-export default function Home() {
+const Home = () => {
   return (
     <React.Fragment>
       <Navbar />
@@ -15,7 +15,13 @@ export default function Home() {
       >
         <NetSavings />
         <AtAGlance />
+
+        {/* // TODO: News component */}
+
+        <CashFlow />
       </main>
     </React.Fragment>
   );
-}
+};
+
+export default Home;
