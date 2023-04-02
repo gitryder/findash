@@ -1,6 +1,12 @@
 import React from "react";
 import { BorderedBox, ColoredBox, H5, Text, Button } from "@components/";
 
+import { useExpenses } from "@queries/useExpenses";
+import { useIncome } from "@queries/useIncome";
+
+import { AddExpenseModal } from "@components/AddExpenseModal";
+import { AddIncomeModal } from "@components/AddIncomeModal";
+
 type EntryType = "expense" | "income";
 
 interface BaseProps {
@@ -8,6 +14,23 @@ interface BaseProps {
 }
 
 const CashFlow = () => {
+  const { data: expenses } = useExpenses();
+
+  const { data: income } = useIncome();
+
+  const [isAddExpenseModalOpen, setIsAddExpenseModalOpen] =
+    React.useState(false);
+
+  const [isAddIncomeModalOpen, setIsAddIncomeModalOpen] = React.useState(false);
+
+  const onAddExpense = () => {
+    setIsAddExpenseModalOpen(true);
+  };
+
+  const onAddIncome = () => {
+    setIsAddIncomeModalOpen(true);
+  };
+
   return (
     <div
       style={{
@@ -15,13 +38,36 @@ const CashFlow = () => {
         gap: "2.25rem",
       }}
     >
-      <EntryList type="expense" />
-      <EntryList type="income" />
+      <EntryList type="expense" data={expenses} onEntryAdd={onAddExpense} />
+      <EntryList type="income" data={income} onEntryAdd={onAddIncome} />
+
+      <AddExpenseModal
+        isOpen={isAddExpenseModalOpen}
+        onClose={() => {
+          setIsAddExpenseModalOpen(false);
+        }}
+      />
+
+      <AddIncomeModal
+        isOpen={isAddIncomeModalOpen}
+        onClose={() => {
+          setIsAddIncomeModalOpen(false);
+        }}
+      />
     </div>
   );
 };
 
-const EntryList = ({ type }: BaseProps) => {
+const EntryList = ({
+  type,
+  data,
+  onEntryAdd,
+}: BaseProps & {
+  data:
+    | ReturnType<typeof useExpenses>["data"]
+    | ReturnType<typeof useIncome>["data"];
+  onEntryAdd?: () => void;
+}) => {
   const color = type === "expense" ? "red" : "green";
 
   return (
@@ -49,6 +95,7 @@ const EntryList = ({ type }: BaseProps) => {
         style={{
           height: "100%",
           display: "flex",
+          gap: "1.5rem",
           flexDirection: "column",
           justifyContent: "space-between",
         }}
@@ -56,17 +103,20 @@ const EntryList = ({ type }: BaseProps) => {
         <div
           style={{
             display: "flex",
+            flexDirection: "column",
             gap: "1rem",
           }}
         >
-          <ExpenseEntry
-            type={type}
-            name="Dominos Pizza"
-            amount={583}
-            tag="🍲 Food & Drinks"
-          />
+          {/* // TODO(gitryder): Type entry */}
+          {data?.map((entry: any) => (
+            <ExpenseEntry key={entry?.id} type={type} {...entry} />
+          ))}
         </div>
-        <Button>
+        <Button
+          onClick={() => {
+            onEntryAdd?.();
+          }}
+        >
           <Text size={2} color={color}>
             Add {type === "expense" ? "an expense" : "income"}
           </Text>
