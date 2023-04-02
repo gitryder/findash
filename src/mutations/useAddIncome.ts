@@ -5,7 +5,7 @@ import { Income } from "@interfaces";
 
 import { incomeQueryKey } from "@queries/useIncome";
 
-const useIncome = () => {
+const useAddIncome = () => {
   const queryClient = useQueryClient();
   return useMutation(
     (income: Income) => {
@@ -21,4 +21,4 @@ const useIncome = () => {
   );
 };
 
-export { useIncome };
+export { useAddIncome };
