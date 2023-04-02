@@ -1,17 +1,24 @@
-# findash
-A simple financial dashboard to track your finances, powered by ChatGPT
-This website is a simple and user-friendly dashboard for managing your personal finances. You can use it to keep track of your income, expenses, and savings all in one place.
+# 💸 FinDash - Your Personal Finance Dashboard
+
+https://user-images.githubusercontent.com/14860945/229370264-2c55cdba-ace4-4ba1-8205-ea092795379e.mov
+
+FinDash is a simple and user-friendly financial dashboard that helps you manage your finances like a pro. Powered by ChatGPT, it provides personalized financial insights and AI-powered assistance to help you stay on top of your spending and earnings.
 
 ## Getting Started
-To use this dashboard, simply visit https://findash-cyan.vercel.app/ in your web browser. The dashboard is fully functional and doesn't require any special setup or configuration.
+To get started, all you need to do is visit https://findash-cyan.vercel.app/ in your web browser. FinDash is fully functional and requires no special setup or configuration.
 
-## Technologies used:
+## Technologies Used
+We use the latest technologies to ensure that FinDash is a reliable and efficient financial dashboard. These include:
 - Next.js: a React-based framework for building server-side rendered applications.
 - Vercel: a cloud platform for deploying serverless functions and static websites.
 - TypeScript: a typed superset of JavaScript that provides enhanced type checking and other features.
-- ChatGPT API: an AI-powered API
+- ChatGPT API: an AI-powered API that provides personalized financial insights and assistance.
 
-## Features
-- Track expenses and income: users can add transactions to keep track of their financial activity.
-- Set budgets and goals: users can set budgets and goals to help them achieve their financial objectives.
-- View reports: users can view reports on their financial activity that make it easy to see how they are doing.
+## Key Features
+With FinDash, you can enjoy a range of powerful features that make it easy to manage your finances. These include:
+- Track expenses and income: easily add transactions to keep track of your financial activity.
+- Set budgets and goals: set goals and budgets to help you achieve your financial objectives.
+- View reports: view reports on your financial activity that make it easy to see how you're doing.
+
+Experience the power of FinDash today and start managing your finances like a pro!
+
