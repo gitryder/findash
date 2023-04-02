@@ -15,12 +15,12 @@ const AtAGlance = () => {
     <div style={{ display: "flex", gap: "2.25rem" }}>
       <DetailItem
         type="outbound"
-        amount={stats?.expenses?.total}
+        amount={stats?.expenses?.total ?? 0}
         suggestion={stats?.expenses?.insight}
       />
       <DetailItem
         type="inbound"
-        amount={stats?.income?.total}
+        amount={stats?.income?.total ?? 0}
         suggestion={stats?.income?.insight}
       />
     </div>

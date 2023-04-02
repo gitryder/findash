@@ -12,7 +12,7 @@ const NetSavings = () => {
     <ColoredBox direction="column" color="purple">
       <H5 color="purple">Your Net Savings</H5>
       <Text size={4} color="purple">
-        {getFormattedAmount(savings)}
+        {getFormattedAmount(savings ?? 0)}
       </Text>
     </ColoredBox>
   );
