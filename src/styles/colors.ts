@@ -20,6 +20,7 @@ const COLORS = {
   grey: {
     dark: "#D9D9D9",
     light: "#E3E3E3",
+    lighter: "#9C9C9C",
   },
   black: {
     dark: "#404040",
