@@ -13,7 +13,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
   await Supabase.from("income").insert({ ...income });
 
-  res.status(200);
+  res.status(200).json({ message: "Income added" });
 };
 
 export default handler;

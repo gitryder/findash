@@ -12,7 +12,7 @@ const generatePrompt = (expense: Expense) => {
   Use an emoji along with text in the tag name. Choose from tags in this array:
   
   [
-    '🍕 Food',
+    '🍕 Food & Drinks',
     '🚕 Travel',
     '🥊 Unplanned',
     '📺 Entertainment',
@@ -45,7 +45,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
   await Supabase.from("expenses").insert({ ...taggedExpense });
 
-  res.status(200);
+  res.status(200).json({ message: "Expense added" });
 };
 
 export default handler;
