@@ -1,8 +1,14 @@
 import React from "react";
 
-const Button = ({ children }: { children: React.ReactNode }) => {
+const Button = ({
+  children,
+  onClick,
+}: {
+  children: React.ReactNode;
+  onClick: React.ButtonHTMLAttributes<HTMLButtonElement>["onClick"];
+}) => {
   return (
-    <button>
+    <button onClick={onClick}>
       <style jsx>{`
         button {
           padding: 14px;
