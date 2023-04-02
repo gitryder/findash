@@ -2,18 +2,26 @@ import React from "react";
 import { colors } from "@styles/colors";
 import { ColoredBox, Text, H5 } from "@components";
 
+import { useGlanceStats } from "@queries/useGlanceStats";
+
+import { getFormattedAmount } from "@helpers/amount";
+
 const AtAGlance = () => {
+  const { data: stats } = useGlanceStats();
+
+  console.log(stats);
+
   return (
     <div style={{ display: "flex", gap: "2.25rem" }}>
       <DetailItem
         type="outbound"
-        amount={19473.45}
-        suggestion={`Try reducing your spends on food & other leisure items to save more`}
+        amount={stats?.expenses?.total}
+        suggestion={stats?.expenses?.insight}
       />
       <DetailItem
         type="inbound"
-        amount={41457.34}
-        suggestion={`Try creating more passive income sources to maximize income.`}
+        amount={stats?.income?.total}
+        suggestion={stats?.income?.insight}
       />
     </div>
   );
@@ -34,7 +42,7 @@ const DetailItem = ({
     <ColoredBox direction="column" color={color} style={{ width: "100%" }}>
       <H5 color={color}>This month</H5>
       <Text size={4} color={color}>
-        + ₹{amount}
+        + {getFormattedAmount(amount)}
       </Text>
       <Text
         size={4}

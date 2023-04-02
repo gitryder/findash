@@ -34,6 +34,14 @@ const API = {
       return axios.post("/api/income/add", income);
     },
   },
+
+  getSavings: () => {
+    return axios.get("/api/savings");
+  },
+
+  getGlanceStats: () => {
+    return axios.get("/api/glance");
+  },
 };
 
 export { API, Supabase, OpenAI };
