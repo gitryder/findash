@@ -6,7 +6,7 @@ interface BaseEntry {
 type Income = BaseEntry;
 
 interface Expense extends BaseEntry {
-  tag: string;
+  tag?: string;
 }
 
 export type { Income, Expense };
