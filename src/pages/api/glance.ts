@@ -66,7 +66,7 @@ const handler = async (
 
   const incomeInsightResponse = await OpenAI.createCompletion({
     model: "text-davinci-003",
-    prompt: generateExpensePrompt(incomeSources as Array<Expense>),
+    prompt: generateIncomePrompt(incomeSources as Array<Expense>),
     max_tokens: 2000,
   });
 
